@@ -1,0 +1,29 @@
+# IntelliJ IDEA
+.idea/
+
+# Compiled class file
+*.class
+
+# Log files
+*.log
+
+# IntelliJ project files
+*.iml
+*.iws
+*.ipr
+
+# Maven
+target/
+
+# Gradle
+build/
+
+# Eclipse
+bin/
+.settings/
+.classpath
+.project
+
+# Spring Boot
+spring-boot-starter/target/
+spring-boot-sample/target/
