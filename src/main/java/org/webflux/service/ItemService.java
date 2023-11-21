@@ -5,6 +5,8 @@ import org.webflux.entity.Item;
 import org.webflux.repository.ItemRepo;
 import reactor.core.publisher.Flux;
 
+import java.time.Duration;
+
 @Service
 public class ItemService {
 
@@ -15,11 +17,11 @@ public class ItemService {
     }
 
     public Flux<Item> getItems() {
-        return Flux.fromIterable(itemRepo.findAll());
+        return Flux.fromIterable(itemRepo.findAll()).delayElements(Duration.ofSeconds(2));
     }
 
     public Flux<Item> saveItem(Item item) {
         itemRepo.save(item);
-        return Flux.fromIterable(itemRepo.findAll());
+        return Flux.fromIterable(itemRepo.findAll()).delayElements(Duration.ofSeconds(2));
     }
 }
